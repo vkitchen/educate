@@ -1,0 +1,1 @@
+{"lesson":"\nThat's a really cool poem, but wouldn't it be cool if we could make it interactive? That'll show Shakespeare\n\n","code":"print \"I want to tell you a story\"\nprint \"But first can you answer this quiz\"\nname = input(\"What is your name?\")\nage = input(\"How old are you?\")\nprint \"Hello \" + name + \" aged \" + age\n"}
