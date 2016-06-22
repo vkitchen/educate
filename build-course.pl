@@ -14,7 +14,7 @@ my $document = do {
     <$fh>;
 };
 
-my $filenumber = 1;
+my $filenumber = 0;
 my %outfile;
 my $mode = 1;
 
@@ -27,16 +27,24 @@ sub write_file {
 }
 
 my @lines = split /\n/, $document;
+
+# Count pages
+my $pagecount = 0;
+foreach my $line (@lines) {
+    if ($line =~ /^    :::/) {
+        $pagecount++;
+    }
+}
+
+# Build each page
 foreach my $line (@lines) {
     # Reverse order so that they don't cascade
-    if ($mode == 3 && not ($line =~ /^    /)) {
+    if ($mode == 2 && not ($line =~ /^    /)) {
         $mode = 1; # Back to a lesson block
+        $outfile{"total_items"} = $pagecount;
         write_file("$outfolder$filenumber.json", encode_json \%outfile);
         %outfile = ();
         $filenumber += 1;
-    }
-    if ($mode == 2 && $line =~ /^    :::/) {
-        $mode = 3; # We've now got the checker block
     }
     if ($mode == 1 && $line =~ /^    /) {
         $mode = 2; # We've now got the code block

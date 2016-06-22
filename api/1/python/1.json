@@ -1,1 +1,1 @@
-{"lesson":"Welcome. I take it you're here to learn to program? To start off with I have prepared an example for you.\n\nSee what it does, and if you're upto it change what's between the \"quotes\" so that it greats you instead of the world.\n\n","code":"print \"Hello, World!\"\n"}
+{"total_items":3,"lesson":"\nComputer programs are written step by step. A new instruction on each line. Almost like poetry.\n\nCan you finish this one off for me? I'm never very good at them\n\n","code":"print \"there once was a village\"\nprint \"and in that village lived...\"\n"}
