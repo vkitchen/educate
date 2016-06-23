@@ -1,0 +1,1 @@
+{"code":"number = input(\"Please kind sir, a number\")\nprint \"Is your number less than 100\"\nprint number < 100\n","total_items":11,"lesson":"\nNow we can check what the user has entered.\n\n"}

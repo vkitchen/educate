@@ -1,0 +1,1 @@
+{"code":"number = int(input(\"A number less than 100 please\"))\nif number < 100:\n\tprint(\"Thank you\")\nelse:\n\tprint(\"Hey. This isn't right at all\")\n","total_items":11,"lesson":"\nAnd even cooler\n\n"}

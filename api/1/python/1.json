@@ -1,1 +1,1 @@
-{"total_items":3,"lesson":"\nComputer programs are written step by step. A new instruction on each line. Almost like poetry.\n\nCan you finish this one off for me? I'm never very good at them\n\n","code":"print \"there once was a village\"\nprint \"and in that village lived...\"\n"}
+{"code":"print \"there once was a village\"\nprint \"and in that village lived...\"\n","lesson":"\nComputer programs are written step by step. A new instruction on each line. Almost like poetry.\n\nCan you finish this one off for me? I'm never very good at them\n\n","total_items":11}
