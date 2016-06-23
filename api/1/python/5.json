@@ -1,1 +1,0 @@
-{"lesson":"\nWe can have more than one variable and give them different names.\n\nWe can also join pieces of text together to make whole sentences.\n\n","total_items":11,"code":"print \"this \" + \"is\" + \" a sentence\"\nname = \"Steve\"\nhairType = \"no\"\nprint \"I am \" + name + \" who has \" + hairType + \" hair\"\n"}

@@ -4,8 +4,13 @@ use warnings;
 
 # use Data::Dumper qw(Dumper);
 use JSON;
+use File::Path qw( make_path );
 
 my $outfolder = "api/1/python/";
+
+if ( !-d $outfolder ) {
+    make_path $outfolder or die "Failed to create path: $outfolder";
+}
 
 my $file = $ARGV[0];
 my $document = do {
