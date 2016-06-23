@@ -14,7 +14,7 @@ import Navigation
 
 main =
   Html.program
-    { init = init 1
+    { init = init 0
     , view = view
     , update = update
     , subscriptions = subscriptions
@@ -30,14 +30,15 @@ port prompt : (String -> msg) -> Sub msg
 
 -- MODEL
 type alias Model =
-  { pageId : Int
+  { totalItems : Int
+  , pageId : Int
   , lesson : String
   , code : String
   , output : String
   }
 
 init topic =
-  ( Model topic "Loading..." "" ""
+  ( Model 0 topic "Loading..." "" ""
   , getPage topic
   )
 
@@ -51,7 +52,7 @@ type Msg
   | Output String
   | NewContent String
   | NextPage
-  | FetchSucceed (String, String)
+  | FetchSucceed (Int, String, String)
   | FetchFail Http.Error
   | Prompt String
 
@@ -63,29 +64,26 @@ update action model =
     Tabbed ->
       (model, inserttab "null")
 
-    NewContent content ->
-      (Model model.pageId model.lesson content model.output, Cmd.none)
+    NewContent lesson ->
+      ({model | lesson = lesson}, Cmd.none)
 
     RunCode ->
-      (Model model.pageId model.lesson model.code "", runcode model.code)
+      ({model | output = ""}, runcode model.code)
 
     Output output ->
-      (Model model.pageId model.lesson model.code (model.output ++ output)
-        , Cmd.none)
+      ({model | output = (model.output ++ output)}, Cmd.none)
 
     ClearOutput ->
-      (Model model.pageId model.lesson model.code "", Cmd.none)
+      ({model | output = ""}, Cmd.none)
 
     PreviousPage ->
-      (Model (model.pageId - 1) model.lesson model.code model.output
-        , getPage (model.pageId - 1))
+      ({model | pageId = (model.pageId - 1)}, getPage (model.pageId - 1))
 
     NextPage ->
-      (Model (model.pageId + 1) model.lesson model.code model.output
-        , getPage (model.pageId + 1))
+      ({model | pageId = (model.pageId + 1)}, getPage (model.pageId + 1))
 
-    FetchSucceed (lesson, code) ->
-      (Model model.pageId lesson code "", Cmd.none)
+    FetchSucceed (totalItems, lesson, code) ->
+      ({model | totalItems = totalItems, lesson = lesson, code = code}, Cmd.none)
 
     FetchFail _ ->
       (model, Cmd.none)
@@ -109,9 +107,10 @@ getPage topic =
   in
     Task.perform FetchFail FetchSucceed (Http.get decodeResponse url)
 
-decodeResponse : Json.Decoder (String, String)
+--decodeResponse : Json.Decoder (String, String)
 decodeResponse =
-  Json.object2 (,)
+  Json.object3 (,,)
+    ("total_items" := Json.int)
     ("lesson" := Json.string)
     ("code" := Json.string)
 
@@ -132,8 +131,10 @@ windowbox model =
       ,"margin" => "10px"]
     ]
     [ window
-      [ button [ onClick PreviousPage ] [ text "<" ]
-      , button [ onClick NextPage ] [ text ">" ]
+      [ button [ if model.pageId > 0 then onClick PreviousPage else disabled True ]
+        [ text "<" ]
+      , button [ if model.pageId < model.totalItems - 1 then onClick NextPage else disabled True]
+        [ text ">" ]
       , h3 [ style [ "margin" => "0 auto" ]]
           [ text "Introduction to Programming" ]
       ]
