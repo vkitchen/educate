@@ -58,4 +58,5 @@ foreach my $line (@lines) {
     }
 }
 
+$outfile{"total_items"} = $pagecount;
 write_file("$outfolder$filenumber.json", encode_json \%outfile);
