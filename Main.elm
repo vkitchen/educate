@@ -64,8 +64,8 @@ update action model =
     Tabbed ->
       (model, inserttab "null")
 
-    NewContent lesson ->
-      ({model | lesson = lesson}, Cmd.none)
+    NewContent code ->
+      ({model | code = code}, Cmd.none)
 
     RunCode ->
       ({model | output = ""}, runcode model.code)
