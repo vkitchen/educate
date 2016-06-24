@@ -9,8 +9,7 @@ nav =
   div [ style ["display" => "flex", "align-items" => "center"
               , "background-color" => "#f5f5f5"
               ,"border-bottom" => "1px solid #ddd"]]
-  [ img [ src "http://thumbs.dreamstime.com/t/circle-abstract-logo-28546917.jpg"
-  , style ["height" => "40px"]] []
+  [ img [ src "/static/logo.png", style ["margin" => "5px"] ] []
   , search
   , tray
   ]
