@@ -152,7 +152,7 @@ windowbox model =
       ]
       (tutorial model)
     , window
-      [ h3 [ style [ "margin" => "0 auto" ]] [ text "tutorial.lua" ]
+      [ h3 [ style [ "margin" => "0 auto" ]] [ text "tutorial.py" ]
       , button [ onClick RunCode ] [ text "run" ]
       ]
       (editor model)
