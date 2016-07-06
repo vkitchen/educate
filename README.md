@@ -2,6 +2,16 @@
 
 Programming for anyone not interested in computers.
 
+# Install
+
+Dependencies are Elm and Perl
+
+# Usage
+
+To build the website `make`
+
+To build the course `./build-course.pl python.md`
+
 # Direction
 
 We're looking for simple ways for people to get started with programming. The first step should be some sort of puzzle solving. To do this, look at the research that's happened before us. Alan Kay and Seymour Papert are both well known here.
