@@ -6,6 +6,18 @@ Programming for anyone not interested in computers.
 
 We're looking for simple ways for people to get started with programming. The first step should be some sort of puzzle solving. To do this, look at the research that's happened before us. Alan Kay and Seymour Papert are both well known here.
 
+## Learning Goals
+
+The only point of learning is if it helps you achieve what you want to do. Ideas for those goals.
+
+* puzzle solving
+* games (game makeer)
+* music
+* animations
+* programming for its own sake
+
+What appeals to girls and not just boys?
+
 ## [Logo](https://turtleacademy.com/learn.php)
 
 Logo is a very simple programming language. It allows you to move a turtle around on the screen to draw shapes. And combine those movements into functions.
@@ -27,3 +39,13 @@ I know very little about this project. Though it inspired [quorom](https://quoru
 ## [CodeCademy](https://codecademy.com/)
 
 Assumes you already want to learn to program. Teaches you the syntax and slowly symantics on many languages. Doesn't explain "why?"
+
+## Link Dump
+
+* http://c2.com/cgi/wiki?WhatSortOfComputationWouldInterestJuniorSchoolChildren
+* http://c2.com/cgi/wiki?GraphicalProgrammingLanguage
+* http://c2.com/cgi/wiki?DataflowProgramming
+* http://www.clickteam.com/
+* http://c2.com/cgi/wiki?FirstTimeLanguage
+* http://c2.com/cgi/wiki?RaisingBrightKids
+* https://www.cs.cmu.edu/~caitlin/papers/NoviceProgSurvey.pdf
