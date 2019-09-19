@@ -115,7 +115,7 @@ subscriptions model =
 getPage topic =
   let
     url =
-      "/api/1/python/" ++ toString topic ++ ".json"
+      "api/1/python/" ++ toString topic ++ ".json"
   in
     Task.perform FetchFail FetchSucceed (Http.get decodeResponse url)
 

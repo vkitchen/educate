@@ -9,10 +9,10 @@ nav =
   div [ style ["display" => "flex", "align-items" => "center"
               , "background-color" => "#f5f5f5"
               ,"border-bottom" => "1px solid #ddd"]]
-  [ img [ src "/static/logo.png", style ["margin" => "5px"] ] []
-  , search
-  , tray
+  [ a [ href "/", class "logo", style ["margin" => "5px"] ] [ text "VK" ]
   ]
+
+-- DEAD CODE --
 
 search =
     div [ style ["margin" => "0 auto"]]

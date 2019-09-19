@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html style="height:100%;">
 <head>
-  <title>ELM Mockup</title>
-  <link rel="stylesheet" type="text/css" href="/static/normalize.css">
+  <title>Educate - Vaughan.Kitchen</title>
+  <link rel="stylesheet" type="text/css" href="static/normalize.css">
+  <style type="text/css">
+    .logo:link, .logo:visited, .logo:hover, .logo:active {
+      font-size: 42px;
+      font-weight: bold;
+      color: #000;
+      text-decoration: none;
+      line-height: 40px
+    }
+  </style>
 </head>
 <body style="height:100%;">
   <div id="mockup" style="height:100%;"></div>
-  <script src="/main.js"></script>
-  <script src="/static/skulpt.min.js"></script>
-  <script src="/static/skulpt-stdlib.js"></script>
+  <script src="main.js"></script>
+  <script src="static/skulpt.min.js"></script>
+  <script src="static/skulpt-stdlib.js"></script>
   <script type="text/javascript">
     /*function input() {
       return app.ports.prompt.send("null"), new Promise(function(a, b) {
